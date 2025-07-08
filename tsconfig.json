@@ -7,7 +7,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "lib": ["dom", "esnext"],
-    "jsx": "react-jsx",
+    "jsx": "react-native",
     "skipLibCheck": true,
     "module": "ES6",
     "target": "es6",
@@ -15,29 +15,17 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@navigation": ["app/navigation"],
-      "@components": ["app/components"],
-      "@constants": ["app/constants"],
-      "@services": ["app/services"],
-      "@features": ["app/features"],
-      "@screens": ["app/screens"],
-      "@control": ["app/control"],
-      "@utils": ["app/utils"],
-      "@hooks": ["app/hooks"],
-      "@store": ["app/store"],
-      "@assets": ["assets"],
-      "@data": ["app/data"]
-    },
-    "types": ["react", "react-native", "./env.d.ts"]
+      "@components": ["src/components"],
+      "@navigation": ["src/navigation"],
+      "@constants": ["src/constants"],
+      "@features": ["src/features"],
+      "@services": ["src/services"],
+      "@utils": ["src/utils"],
+      "@store": ["src/store"],
+      "@hooks": ["src/hooks"],
+      "@data": ["src/data"]
+    }
   },
-  "include": [
-    "**/*",
-    "**/*.ts",
-    "**/*.tsx",
-    "env.d.ts",
-    "../App.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
-  ],
+  "include": ["**/*", "**/*.ts", "**/*.tsx", "env.d.ts"],
   "exclude": ["node_modules"]
 }

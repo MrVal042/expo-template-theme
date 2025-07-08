@@ -1,14 +1,19 @@
-import { LoadApp } from '@navigation'
+import * as SplashScreen from 'expo-splash-screen'
+import * as React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import { LoadApp } from '@navigation'
 
 const queryClient = new QueryClient()
-export default function App() {
+
+SplashScreen.preventAutoHideAsync()
+
+export function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <LoadApp />
-      </GestureHandlerRootView>
+      <LoadApp
+        onReady={() => SplashScreen.hideAsync()}
+        linking={{ enabled: true, prefixes: ['helloworld://'] }}
+      />
     </QueryClientProvider>
   )
 }
