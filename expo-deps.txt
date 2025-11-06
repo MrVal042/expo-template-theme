@@ -1,0 +1,15 @@
+expo-status-bar
+expo-constants
+expo-asset
+react-native-gesture-handler
+react-native-reanimated
+react-native-safe-area-context
+react-native-screens
+@react-navigation/native
+@react-navigation/bottom-tabs
+@react-navigation/native-stack
+axios
+
+# Add any other dependencies your app needs, one per line. The init script
+# will call `npx expo install <list>` to install versions compatible with the
+# installed `expo` package (and thus the target SDK).

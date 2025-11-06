@@ -56,6 +56,34 @@ We highly recommend using the development builds for normal development and test
 
 The `ios` and `android` folder are gitignored in the project by default as they are automatically generated during the build process ([Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)). This means that you should not edit these folders directly and use [config plugins](https://docs.expo.dev/config-plugins/) instead. However, if you need to edit these folders, you can remove them from the `.gitignore` file so that they are tracked by git.
 
+## Template usage (package-manager agnostic)
+
+This repository is intended to be used as a template. It has been made package-manager-agnostic by removing the lockfile and package manager workspace files.
+
+To initialize this template for a new project (creates package.json and installs Expo + common dependencies):
+
+1. Make the init script executable (only required once):
+
+```sh
+chmod +x ./scripts/init-expo.sh
+```
+
+2. Run the script, optionally specifying your package manager (npm, yarn, or pnpm). Default is npm:
+
+```sh
+./scripts/init-expo.sh npm
+```
+
+What the script does:
+
+- Creates `package.json` if missing (using the chosen package manager)
+- Installs the latest `expo` package
+- Runs `npx expo install` for packages listed in `expo-deps.txt` so Expo will pick compatible versions for the installed SDK
+
+After this, run `npx expo start` to start the dev server.
+
+Customize `expo-deps.txt` to add or remove packages that should be installed by default for new projects.
+
 ## Resources
 
 - [React Navigation documentation](https://reactnavigation.org/)
@@ -64,7 +92,6 @@ The `ios` and `android` folder are gitignored in the project by default as they 
 ---
 
 Demo assets are from [lucide.dev](https://lucide.dev/)
-
 
 https://github.com/MrVal042/new-project
 
