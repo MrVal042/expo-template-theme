@@ -14,12 +14,52 @@ How to use
 1. Copy this repo to your new project location (or use it as a template on GitHub).
 2. Make the init script executable and run it (choose a package manager or let it detect one):
 
-   ```sh
+   ```bash
    chmod +x ./scripts/init-expo.sh
    ./scripts/init-expo.sh    # will try to detect npm/yarn/pnpm if not provided
    ```
 
 3. Start the dev server with `npx expo start`.
+
+#### Or After cloning a new repository from this template, follow these steps to initialize your app:
+
+1. Make the init script executable (only needed once):
+
+   ```bash
+   chmod +x ./scripts/init-expo.sh
+   ```
+
+2. Run the init script to set up your project dependencies. You can specify your preferred package manager (npm, yarn, pnpm), or let the script auto-detect:
+
+   ```bash
+   ./scripts/init-expo.sh
+   ```
+
+   or, for a specific package manager:
+
+   ```bash
+   ./scripts/init-expo.sh npm
+   ```
+
+   or
+
+   ```bash
+   ./scripts/init-expo.sh yarn
+   ```
+
+   or
+
+   ```bash
+   ./scripts/init-expo.sh pnpm
+   ```
+
+3. Start the Expo development server:
+
+   ```bash
+   npx expo start
+   ```
+
+4. (Optional) Copy .env.example to .env and update environment variables as needed.
 
 Customizing the template
 
