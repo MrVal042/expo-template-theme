@@ -15,15 +15,15 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@components": ["src/components"],
-      "@navigation": ["src/navigation"],
-      "@constants": ["src/constants"],
-      "@features": ["src/features"],
-      "@services": ["src/services"],
-      "@utils": ["src/utils"],
-      "@store": ["src/store"],
-      "@hooks": ["src/hooks"],
-      "@data": ["src/data"]
+      "@components": ["app/components"],
+      "@navigation": ["app/navigation"],
+      "@constants": ["app/constants"],
+      "@features": ["app/features"],
+      "@services": ["app/services"],
+      "@utils": ["app/utils"],
+      "@store": ["app/store"],
+      "@hooks": ["app/hooks"],
+      "@data": ["app/data"]
     }
   },
   "include": ["**/*", "**/*.ts", "**/*.tsx", "env.d.ts"],
