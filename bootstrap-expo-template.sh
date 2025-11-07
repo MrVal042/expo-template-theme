@@ -17,10 +17,12 @@ echo "📂 Step 3: Cloning structure from $REPO_URL..."
 git clone --depth 1 $REPO_URL $TMP_REPO
 
 echo "📁 Step 4: Copying folders and files..."
-[ -d "$TMP_REPO/app" ] && cp -r $TMP_REPO/app ./app
-[ -d "$TMP_REPO/__test__" ] && cp -r $TMP_REPO/__test__ ./__test__
-[ -d "$TMP_REPO/types" ] && cp -r $TMP_REPO/types ./types
-[ -d "$TMP_REPO/scripts" ] && cp -r $TMP_REPO/scripts ./scripts
+mkdir -p app __test__ types scripts
+
+[ -d "$TMP_REPO/app" ] && cp -r $TMP_REPO/app/* ./app
+[ -d "$TMP_REPO/__test__" ] && cp -r $TMP_REPO/__test__/* ./__test__
+[ -d "$TMP_REPO/types" ] && cp -r $TMP_REPO/types/* ./types
+[ -d "$TMP_REPO/scripts" ] && cp -r $TMP_REPO/scripts/* ./scripts
 [ -f "$TMP_REPO/App.tsx" ] && cp $TMP_REPO/App.tsx ./App.tsx
 [ -f "$TMP_REPO/.env" ] && cp $TMP_REPO/.env ./.env
 [ -f "$TMP_REPO/env.ts" ] && cp $TMP_REPO/env.ts ./env.ts
@@ -106,7 +108,7 @@ module.exports = function (api) {
             '@features': './app/features',
             '@screens': './app/screens',
             '@control': './app/control',
-            '@utils': ['./app/utils'],
+            '@utils': './app/utils',
             '@hooks': './app/hooks',
             '@store': './app/store',
             '@data': './app/data',
@@ -135,4 +137,8 @@ if [ -f "./scripts/setup.sh" ]; then
   ./scripts/setup.sh
 fi
 
-echo "✅ Done. Your Expo app is ready!"
+echo "🧼 Step 11: Cleaning up bootstrap files..."
+rm -f bootstrap-expo-template.sh
+rm -rf scripts
+
+echo "✅ Done. Your Expo app is fully bootstrapped and clean!"
