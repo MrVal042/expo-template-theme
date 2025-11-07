@@ -26,6 +26,6 @@
       "@data": ["app/data"]
     }
   },
-  "include": ["**/*", "**/*.ts", "**/*.tsx", "env.d.ts"],
+  "include": ["**/*", "**/*.ts", "**/*.tsx", "env.d.ts", "../App.tsx"],
   "exclude": ["node_modules"]
 }
